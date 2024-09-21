@@ -1,0 +1,49 @@
+header {
+  background-color: #343a40;
+  color: #f8f9fa; 
+  padding: 1rem;
+}
+
+.nav-link {
+  .nav-link {
+    display: block;
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+    font-size: var(--bs-nav-link-font-size);
+    font-weight: var(--bs-nav-link-font-weight);
+    color: #fff;
+    text-decoration: none;
+    background: 0 0;
+    border: 0;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+}
+
+.nav-link:hover {
+  color: #ced4da; 
+}
+
+.form-control-dark {
+  background-color: #495057; /* Dark background for form input */
+  color: #f8f9fa; /* Light text color for input */
+  border: 1px solid #6c757d; /* Border color for form input */
+}
+
+.btn-outline-light {
+  border-color: #f8f9fa; /* Light border color for outline buttons */
+  color: #f8f9fa; /* Light text color for outline buttons */
+}
+
+.btn-outline-light:hover {
+  background-color: #6c757d; /* Slightly darker background on hover */
+  color: #f8f9fa; /* Light text color on hover */
+}
+
+.btn-warning {
+  background-color: #ffc107; /* Warning button background color */
+  border-color: #ffc107; /* Warning button border color */
+}
+
+.btn-warning:hover {
+  background-color: #e0a800; /* Darker background on hover */
+  border-color: #d39e00; /* Darker border color on hover */
+}
