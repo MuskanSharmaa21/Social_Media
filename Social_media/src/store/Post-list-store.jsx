@@ -1,6 +1,5 @@
 import { useReducer, createContext } from "react";
-import PostList from "../components/PostList";
-
+import PropTypes from 'prop-types';
 
 const PostListContext = createContext({
   postList: [],
@@ -8,15 +7,37 @@ const PostListContext = createContext({
   deletePost: () => {},
 });
 
+const postListReducer = (state, action) => {
+  switch (action.type) {
+    case 'ADD_POST':
+      return [...state, action.payload];
+    case 'DELETE_POST':
+      return state.filter(post => post.id !== action.payload);
+    default:
+      return state;
+  }
+};
+
 const PostListProvider = ({ children }) => {
   const [postList, dispatchPostList] = useReducer(postListReducer, DEFAULT_POST_LIST);
 
+  const addPost = (post) => {
+    dispatchPostList({ type: 'ADD_POST', payload: post });
+  };
+
+  const deletePost = (id) => {
+    dispatchPostList({ type: 'DELETE_POST', payload: id });
+  };
 
   return (
     <PostListContext.Provider value={{ postList, addPost, deletePost }}>
       {children}
     </PostListContext.Provider>
   );
+};
+
+PostListProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 // Default posts
@@ -39,4 +60,4 @@ const DEFAULT_POST_LIST = [
   },
 ];
 
-export default PostList;
+export { PostListProvider, PostListContext };
